@@ -2,7 +2,7 @@
 #include "pitches.h"
 
 #define BuzzerPin 16
-#define GPIO_AUDIO_OUT_LEFT  6
+#define GPIO_AUDIO_OUT_LEFT  16
 #define pinBut 14
 
 #include <stdio.h>
