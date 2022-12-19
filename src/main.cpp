@@ -30,10 +30,10 @@ void loop() {
  delay(100);
  if (!gpio_get(pinBut)) {
   gpio_put(LED_BUILTIN, 1);
-  delay(250);
-  gpio_put(LED_BUILTIN, 0);
   Serial.println("OK");
   WavPwmPlayAudio(DING_WAV);
+  while (WavPwmIsPlaying());
+  gpio_put(LED_BUILTIN, 0);
  }
 
 }
