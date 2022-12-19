@@ -80,7 +80,7 @@ unsigned char WavPwmPlayAudio(const unsigned short WavPwmData[])
       channel_config_set_write_increment(&WavPwmDmaChConfig, false);
       channel_config_set_transfer_data_size(&WavPwmDmaChConfig, DMA_SIZE_32);
       channel_config_set_dreq(&WavPwmDmaChConfig, pwm_get_dreq(PwmSliceNum));
-      dma_channel_configure(WavPwmDmaCh, &WavPwmDmaChConfig, (void*)(PWM_BASE + PWM_CH0_CC_OFFSET), &(WavPwmData[2]), (WavPwmData[0] + (65536 * WavPwmData[1])) / 2, false);
+      dma_channel_configure(WavPwmDmaCh, &WavPwmDmaChConfig, (void*)(PWM_BASE + PWM_CH3_CC_OFFSET), &(WavPwmData[2]), (WavPwmData[0] + (65536 * WavPwmData[1])) / 2, false);
 
       dma_hw->ints0 = (1 << WavPwmDmaCh);
       dma_start_channel_mask(1 << WavPwmDmaCh);

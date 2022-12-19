@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "pitches.h"
 
-#define GPIO_AUDIO_OUT_LEFT  16
+#define GPIO_AUDIO_OUT_LEFT  6
 #define pinBut 14
 
 #include <stdio.h>
