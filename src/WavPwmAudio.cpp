@@ -38,7 +38,7 @@ void WavPwmInit(unsigned char GpioPinChannelA)
    
    // gpio_set_function(GpioPinChannelA + 1, GPIO_FUNC_PWM);
    
-   PwmSliceNum = pwm_gpio_to_slice_num(16);
+   PwmSliceNum = pwm_gpio_to_slice_num(GpioPinChannelA);
    pwm_set_wrap(PwmSliceNum, WAV_PWM_COUNT);
    pwm_set_chan_level(PwmSliceNum, PWM_CHAN_A, 0);
 

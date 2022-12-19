@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include "pitches.h"
 
-#define BuzzerPin 16
 #define GPIO_AUDIO_OUT_LEFT  16
 #define pinBut 14
 
@@ -18,7 +17,7 @@ void setup() {
   pinMode(pinBut, INPUT_PULLUP);
   pinMode(LED_BUILTIN, OUTPUT);
 
-  tone(BuzzerPin,NOTE_B5,500);
+  tone(GPIO_AUDIO_OUT_LEFT,NOTE_B5,500);
   delay(1000);
 
   WavPwmInit(GPIO_AUDIO_OUT_LEFT);
