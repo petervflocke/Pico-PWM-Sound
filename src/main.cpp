@@ -17,7 +17,7 @@ void setup() {
   pinMode(pinBut, INPUT_PULLUP);
   pinMode(LED_BUILTIN, OUTPUT);
 
-  tone(GPIO_AUDIO_OUT_LEFT,NOTE_B5,500);
+  tone(GPIO_AUDIO_OUT_LEFT,NOTE_B5,10);
   delay(1000);
 
   WavPwmInit(GPIO_AUDIO_OUT_LEFT);
@@ -30,7 +30,7 @@ void loop() {
  if (!gpio_get(pinBut)) {
   gpio_put(LED_BUILTIN, 1);
   Serial.println("OK");
-  WavPwmPlayAudio(DING_WAV);
+  WavPwmPlayAudio(RETRO_BIT);
   while (WavPwmIsPlaying());
   gpio_put(LED_BUILTIN, 0);
  }
